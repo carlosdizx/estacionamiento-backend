@@ -53,7 +53,7 @@ class PuestoController extends Controller
      */
     public function show(Puesto $puesto)
     {
-        return Puesto::findOrFail($puesto->id)->get();
+        return Puesto::findOrFail($puesto->id);
     }
 
     /**
