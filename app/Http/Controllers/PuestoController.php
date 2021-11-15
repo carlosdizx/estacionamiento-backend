@@ -87,6 +87,7 @@ class PuestoController extends Controller
      */
     public function destroy(Puesto $puesto)
     {
-        //
+        $puesto = Puesto::findOrFail($puesto->id);
+        return $puesto->delete();
     }
 }
