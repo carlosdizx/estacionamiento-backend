@@ -41,6 +41,7 @@ class PuestoController extends Controller
         $puesto->propietario=$request->input('propietario');
         $puesto->placa=$request->input('placa');
         $puesto->marca=$request->input('marca');
+        $puesto->save();
         return $puesto;
 
     }
