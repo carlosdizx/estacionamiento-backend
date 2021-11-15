@@ -35,7 +35,12 @@ class PuestoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $puesto = new Puesto;
+        $puesto->inicio=$request->input('inicio');
+        $puesto->propietario=$request->input('propietario');
+        $puesto->placa=$request->input('propietario');
+        $puesto->marca=$request->input('propietario');
+        $puesto->save();
     }
 
     /**
