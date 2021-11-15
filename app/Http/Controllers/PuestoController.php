@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Puesto;
+use http\Message\Body;
 use Illuminate\Http\Request;
 
 class PuestoController extends Controller
@@ -14,7 +15,7 @@ class PuestoController extends Controller
      */
     public function index()
     {
-        //
+        return Puesto::all();
     }
 
     /**
@@ -24,7 +25,7 @@ class PuestoController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -38,9 +39,10 @@ class PuestoController extends Controller
         $puesto = new Puesto;
         $puesto->inicio=$request->input('inicio');
         $puesto->propietario=$request->input('propietario');
-        $puesto->placa=$request->input('propietario');
-        $puesto->marca=$request->input('propietario');
-        $puesto->save();
+        $puesto->placa=$request->input('placa');
+        $puesto->marca=$request->input('marca');
+        return $puesto;
+
     }
 
     /**
@@ -51,7 +53,7 @@ class PuestoController extends Controller
      */
     public function show(Puesto $puesto)
     {
-        //
+        return Puesto::findOrFail($puesto)->get();
     }
 
     /**

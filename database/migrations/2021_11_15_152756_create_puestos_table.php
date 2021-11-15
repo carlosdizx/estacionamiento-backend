@@ -15,7 +15,7 @@ class CreatePuestosTable extends Migration
     {
         Schema::create('puestos', function (Blueprint $table) {
             $table->id();
-            $table->date('inicio')->nullable(false);
+            $table->dateTime('inicio', $precision = 0)->nullable(false);
             $table->string('propietario');
             $table->string('placa');
             $table->string('marca');
