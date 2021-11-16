@@ -14,7 +14,7 @@ class RegistroController extends Controller
      */
     public function index()
     {
-        //
+        return Registro::all();
     }
 
     /**
@@ -35,7 +35,12 @@ class RegistroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $registro = new Registro();
+        $registro->inicio=$request->inicio;
+        $registro->propietario=$request->propietario;
+        $registro->placa=$request->placa;
+        $registro->save();
+        return $registro;
     }
 
     /**
