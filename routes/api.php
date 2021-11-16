@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\PuestoController;
+use \App\Http\Controllers\RegistroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::resource('puestos',PuestoController::class);
 
-Route::resource('registros',PuestoController::class);
+Route::resource('registros',RegistroController::class);
