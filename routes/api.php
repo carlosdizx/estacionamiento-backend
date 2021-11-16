@@ -21,6 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::resource('puestos',PuestoController::class);
+Route::apiResource('puestos',PuestoController::class);
 
-Route::resource('registros',RegistroController::class);
+Route::apiResource('registros',RegistroController::class);

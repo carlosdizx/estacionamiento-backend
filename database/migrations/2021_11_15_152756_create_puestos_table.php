@@ -17,8 +17,7 @@ class CreatePuestosTable extends Migration
             $table->id();
             $table->dateTime('inicio', $precision = 0)->nullable(false);
             $table->string('propietario');
-            $table->string('placa');
-            $table->string('marca');
+            $table->string('placa')->unique();
             $table->timestamps();
         });
     }

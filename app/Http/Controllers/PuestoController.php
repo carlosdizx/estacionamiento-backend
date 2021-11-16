@@ -40,7 +40,6 @@ class PuestoController extends Controller
         $puesto->inicio=$request->inicio;
         $puesto->propietario=$request->propietario;
         $puesto->placa=$request->placa;
-        $puesto->marca=$request->marca;
         $puesto->save();
         return $puesto;
 
@@ -72,18 +71,13 @@ class PuestoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Puesto  $puesto
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Puesto $puesto)
+    public function update(Request $request, $id)
     {
-        $buscado = Puesto::findOrFail($puesto->id);
-        $buscado->inicio=$puesto->inicio;
-        $buscado->propietario=$puesto->propietario;
-        $buscado->placa=$puesto->placa;
-        $buscado->marca=$puesto->marca;
-        $buscado->save();
-        return $buscado;
+        $actualizado = Puesto::findOrFail($id)->update($request->all());
+        return $actualizado;
     }
 
     /**
