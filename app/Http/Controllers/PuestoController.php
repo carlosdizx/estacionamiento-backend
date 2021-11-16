@@ -77,7 +77,13 @@ class PuestoController extends Controller
      */
     public function update(Request $request, Puesto $puesto)
     {
-        $puesto = Puesto::findOrFail($puesto->id);
+        $buscado = Puesto::findOrFail($puesto->id);
+        $buscado->inicio=$puesto->inicio;
+        $buscado->propietario=$puesto->propietario;
+        $buscado->placa=$puesto->placa;
+        $buscado->marca=$puesto->marca;
+        $buscado->save();
+        return $buscado;
     }
 
     /**
