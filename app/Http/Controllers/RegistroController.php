@@ -90,6 +90,7 @@ class RegistroController extends Controller
      */
     public function destroy(Registro $registro)
     {
-        $registro->delete();
+        $registro = Registro::findOrFail($registro->id);
+        return $registro->delete();
     }
 }
