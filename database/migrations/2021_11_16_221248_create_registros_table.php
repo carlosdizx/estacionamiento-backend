@@ -15,6 +15,10 @@ class CreateRegistrosTable extends Migration
     {
         Schema::create('registros', function (Blueprint $table) {
             $table->id();
+            $table->dateTime('inicio', $precision = 0)->nullable(false);
+            $table->dateTime('fin', $precision = 0)->nullable(true);
+            $table->string('propietario');
+            $table->string('placa');
             $table->timestamps();
         });
     }
