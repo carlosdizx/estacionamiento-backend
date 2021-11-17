@@ -37,6 +37,7 @@ class RegistroController extends Controller
     {
         $registro = new Registro();
         $registro->inicio=$request->inicio;
+        $registro->fin=$request->fin;
         $registro->propietario=$request->propietario;
         $registro->placa=$request->placa;
         $registro->save();
@@ -51,7 +52,7 @@ class RegistroController extends Controller
      */
     public function show(Registro $registro)
     {
-        return Response::findOrFail($registro->id);
+        return Registro::findOrFail($registro->id);
     }
 
     /**
@@ -74,12 +75,8 @@ class RegistroController extends Controller
      */
     public function update(Request $request, Registro $registro)
     {
-        $buscado = Registro::findOrFail($registro->id);
-        $buscado->inicio=$registro->inicio;
-        $buscado->propietario=$registro->propietario;
-        $buscado->placa=$registro->placa;
-        $buscado->save();
-        return $buscado;
+        $actualizado = Registro::findOrFail($registro->id)->update($request->all());
+        return $actualizado;
     }
 
     /**
