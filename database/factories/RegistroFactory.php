@@ -18,7 +18,7 @@ class RegistroFactory extends Factory
             'inicio' => $this->faker->dateTime($max = 'now', $timezone = null),
             'fin' => $this->faker->dateTime($max = 'now', $timezone = null),
             'propietario' => $this-> faker->buildingNumber ,
-            'placa' => $this-> faker->buildingNumber ,
+            'placa' => $this-> faker->buildingNumber ."GRT",
         ];
     }
 }

@@ -16,14 +16,6 @@ class RegistroSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('registros')->insert([
-            'inicio' => '2021-11-1',
-            'fin' => '2021-11-1',
-            'propietario' => '1234',
-            'placa' => '321'
-
-        ]);
-
         Registro::factory(4)->create();
 
 
